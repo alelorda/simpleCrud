@@ -2,12 +2,10 @@ import React, { forwardRef, ReactElement, Ref, useState } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import SimpleCrudButtonAd from '../simple-crud-button-add/simple-crud-button-add';
+import { AddItemForm } from '../add-item-form/add-item-form';
+import { DialogTitle, Slide } from '@mui/material';
 
 const Transition = forwardRef(function Transition(
     props: TransitionProps & {
@@ -42,16 +40,15 @@ export const AddItem = () => {
                 onClose={handleClose}
                 aria-describedby="alert-dialog-slide-description"
             >
-                <DialogTitle>{"Use Google's location service?"}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-                        Let Google help apps determine location. This means sending anonymous
-                        location data to Google, even when no apps are running.
-                    </DialogContentText>
-                </DialogContent>
+                <DialogTitle
+                    align="center"
+                >
+                    {"Add Item"}
+                </DialogTitle>
+                <AddItemForm />
                 <DialogActions>
-                    <Button onClick={handleClose}>Disagree</Button>
                     <Button onClick={handleClose}>Agree</Button>
+                    <Button onClick={handleClose}>Close</Button>
                 </DialogActions>
             </Dialog>
         </div>
