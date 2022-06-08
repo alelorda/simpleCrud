@@ -1,8 +1,11 @@
 import './simple-crud-button-add'
 import Button from '@mui/material/Button';
 
+export interface SimpleCrudButtonAdProps {
+    handleClickOpen?: () => void;
+}
 
-export default function SimpleCrudButtonAd() {
+export default function SimpleCrudButtonAd({ handleClickOpen }: SimpleCrudButtonAdProps) {
     return (
         <div>
             <Button
@@ -11,7 +14,7 @@ export default function SimpleCrudButtonAd() {
                 size='large'
                 color="success"
                 style={{ marginBlockStart: 10 }}
-                onClick={() => { console.log('ADD') }}
+                onClick={handleClickOpen}
             >
                 Add
             </Button >

@@ -7,6 +7,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
+import SimpleCrudButtonAd from '../simple-crud-button-add/simple-crud-button-add';
 
 const Transition = forwardRef(function Transition(
     props: TransitionProps & {
@@ -31,9 +32,9 @@ export const AddItem = () => {
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
-                Slide in alert dialog
-            </Button>
+            <SimpleCrudButtonAd
+                handleClickOpen={handleClickOpen}
+            />
             <Dialog
                 open={open}
                 TransitionComponent={Transition}
