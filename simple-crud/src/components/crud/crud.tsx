@@ -1,3 +1,4 @@
+import SimpleCrudButtonAd from '../simple-crud-button-add/simple-crud-button-add';
 import DenseTable from '../simple-crud-table/simple-crud-table';
 
 function Crud() {
@@ -7,6 +8,7 @@ function Crud() {
                 Simple Crud
             </h1>
             <DenseTable />
+            <SimpleCrudButtonAd />
         </div >
     );
 }

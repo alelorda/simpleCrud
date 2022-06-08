@@ -4,26 +4,28 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import SimpleCrudButton from '../simplecrudbutton/simple-crud-button';
 import './simple-crud-table.css'
 
 function createData(
+    id: number,
+    surname: string,
     name: string,
-    calories: number,
-    fat: number,
-    carbs: number,
-    protein: number,
+    age: number,
+    address: string,
+    salary: number,
 ) {
-    return { name, calories, fat, carbs, protein };
+    return {
+        id, surname, name, age, address, salary
+    };
 }
 
 const items = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
+    createData(1, 'Leclerc', 'Charles', 30, 'Miami 500', 4.0),
+    createData(2, 'Verstapen', 'Max', 30, 'Miami 500', 4.0),
+    createData(3, 'Perez', 'Checo', 30, 'Miami 500', 4.0),
+    createData(4, 'Sainz', 'Carlos', 30, 'Miami 500', 4.0),
+    createData(5, 'Hamilton', 'Lewis', 30, 'Miami 500', 4.0),
 ];
 
 export default function DenseTable() {
@@ -35,9 +37,9 @@ export default function DenseTable() {
                         <TableRow >
                             <TableCell style={{ color: "white" }} align="center">Surname </TableCell>
                             <TableCell style={{ color: "white" }} align="center">Name</TableCell>
-                            <TableCell style={{ color: "white" }} align="center">Fat</TableCell>
-                            <TableCell style={{ color: "white" }} align="center">Addres</TableCell>
-                            <TableCell style={{ color: "white" }} align="center">Protein</TableCell>
+                            <TableCell style={{ color: "white" }} align="center">Age</TableCell>
+                            <TableCell style={{ color: "white" }} align="center">Address</TableCell>
+                            <TableCell style={{ color: "white" }} align="center">Salary</TableCell>
                             <TableCell style={{ color: "white" }} align="center">Accion</TableCell>
                         </TableRow >
                     </TableHead >
@@ -46,13 +48,13 @@ export default function DenseTable() {
                         {items.map((item) => (
 
                             <TableRow className="tableCell"
-                                key={item.name}
+                                key={item.id}
                             >
-                                <TableCell style={{ color: "white" }} align="center"> {item.name} </TableCell>
-                                <TableCell style={{ color: "white" }} align="center">{item.calories}</TableCell>
-                                <TableCell style={{ color: "white" }} align="center">{item.fat}</TableCell>
-                                <TableCell style={{ color: "white" }} align="center">{item.carbs}</TableCell>
-                                <TableCell style={{ color: "white" }} align="center">{item.protein}</TableCell>
+                                <TableCell style={{ color: "white" }} align="center"> {item.surname} </TableCell>
+                                <TableCell style={{ color: "white" }} align="center">{item.name}</TableCell>
+                                <TableCell style={{ color: "white" }} align="center">{item.age}</TableCell>
+                                <TableCell style={{ color: "white" }} align="center">{item.address}</TableCell>
+                                <TableCell style={{ color: "white" }} align="center">{item.salary}</TableCell>
                                 <TableCell style={{ color: "white" }} align="center"><SimpleCrudButton /></TableCell>
                             </TableRow>
                         ))}

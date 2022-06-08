@@ -6,21 +6,21 @@ function SimpleCrudButton() {
     return (
         <div >
             <Button
-                variant="contained"
-                color="error"
-                //className={classes.button}
-                startIcon={<DeleteIcon />}
-            >
-                Delete
-            </Button>
-            <Button
                 variant="outlined"
                 color="primary"
                 size="large"
-                /*className={classes.button}*/
                 startIcon={<SaveIcon />}
+                onClick={() => { console.log('Edit') }}
             >
                 Edit
+            </Button>
+            <Button
+                variant="contained"
+                color="error"
+                startIcon={<DeleteIcon />}
+                onClick={() => { console.log('Delete') }}
+            >
+                Delete
             </Button>
         </div >
     );
