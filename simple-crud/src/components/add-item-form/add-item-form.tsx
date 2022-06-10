@@ -1,7 +1,13 @@
 import DialogContent from "@mui/material/DialogContent";
 import TextField from '@mui/material/TextField';
+import { ISimpleCrudItem } from "../../models/isimple-crud-item";
 
-export const AddItemForm = () => {
+interface AddItemFormProps {
+    item?: ISimpleCrudItem;
+}
+
+export const AddItemForm = ({ item }: AddItemFormProps) => {
+
     return (
         <div>
             <DialogContent>
